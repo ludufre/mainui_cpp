@@ -1001,6 +1001,13 @@ UI_VidInit
 int UI_VidInit( void )
 {
 	static bool calledOnce = false;
+
+	// FIX: Don't initialize if screen dimensions are not ready
+	if( ScreenWidth <= 0 || ScreenHeight <= 0 )
+	{
+		return 0;
+	}
+
 	if( uiStatic.textInput )
 	{
 		uiStatic.menu.InputMethodResized();
