@@ -56,7 +56,6 @@ private:
 	//=============
 	// GameUI-style
 	//=============
-	typedef struct
 	struct bimage_t
 	{
 		HIMAGE hImage;
@@ -73,14 +72,12 @@ private:
 
 	void DrawBackgroundPiece( const bimage_t &image, Point p, int xOffset, int yOffset, float xScale, float yScale );
 	void DrawSteamBackgroundLayout( Point p, int xOffset, int yOffset, float xScale, float yScale );
-	void DrawColor();
-	void DrawInGameBackground();
 
 	static bool LoadSteamBackground( const bool gamedirOnly ); // Steam background loader
 	static bool LoadWONBackground( const bool gamedirOnly ); // WON background loader
 	static void UpdatePreference();
 
-	static bool s_bEnableLogoMovie, s_bGameHasSteamBackground, s_bGameHasWONBackground;
+	static bool s_bGameHasSteamBackground, s_bGameHasWONBackground;
 
 	static bstate_e s_state;
 
